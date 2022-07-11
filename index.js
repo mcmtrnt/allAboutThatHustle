@@ -21,10 +21,10 @@ function signup() {
       console.log('test');
       Email.send({
         Host: "smtp.gmail.com",
-        Username : "alpinexcemail@gmail.com",
-        Password : "qdqmdjraboftcbbu", //AlpineXC1$
+        Username : "email.alpinexc1@gmail.com",
+        Password : "mnxitdqmjbzhcywb", //AlpineXC1$$ mnxitdqmjbzhcywb
         To : 'mcmtrnt3@gmail.com',  
-        From : "alpinexcemail@gmail.com",
+        From : "email.alpinexc1@gmail.com",
         Subject : "All About That Hustle Newsletter Signup",
         Body : document.getElementById('email-input').value + "     From: " + document.getElementById('email-input').value ,
       })
@@ -53,3 +53,21 @@ function signup() {
  
      return re.test(text);
      }
+
+function isNonEmpty(text) {
+    if (text.length == 0 || !text || text == null || text == undefined) {
+    //if (typeof text === "string" && text.length > 0 ) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+function signupon() {
+    document.getElementById("signup-modal").style.display = "none";
+  }
+  
+  function signupoff() {
+    document.getElementById("signup-modal").style.display = "none";
+  }
