@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="description" content="A comprehensive guide to real estate investing. Learn how to find deals, negotiate contracts, complete repairs, and make money with real estate.">
+    <meta name="keywords" content="real estate investing, make money with real estate, how to invest in real estate, beginners guide to real estate investing">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>A Guide To Real Estate Investing | All About That Hustle</title>
+        <link rel="icon" href="/images/favicon.jpg">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+     
+        <script src="https://smtpjs.com/v3/smtp.js"></script>  
+
+        <link rel="stylesheet" href="/index.css">
+        <script src="/index.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div id="overlay">
+            <div id="text">Sending...</div>
+        </div>
+
+        <div id="signup-modal" class="modal2">
+            <div class="modal-content2">
+                <span class="close2" onclick="closeSignupModal()">&times;</span> 
+                <div class="modal-header2">Sign Up For Our Newsletter!</div>
+                <br>
+                <div>Get our latest content and become a real estate expert</div>
+                <div id="signup-error" class="signup-error">Invalid Email</div>
+                <input id='email-input' class="email-input" type="text" placeholder="Enter Your Email">
+                <div class="newsletter" onclick="signup()">SIGN UP</div>
+            </div>
+        </div>
+
+        <header>
+            <div class="top-line"></div>
+            <div class="myNav">
+                <a href="/"><h1 class="blog-title">All About That Hustle</h1></a>
+                <nav>
+                    <ul>
+                        <li>Home</li>
+                        <li>Real Estate Basics</li>
+                        <li>Analyzing Investments</li>
+                        <li>Additional Resources</li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="row">
+                <div class="col-md-8">
+                    
+                    <div class="row article">
+                        <div class="col-md-5">
+                            <a href="/AGameWeCanWin.html"><img class="article-image" src="/images/house.jpg" alt="Can I make money with real estate?"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <h2 class="article-title"><a href="/AGameWeCanWin.html">Real Estate : A Game We Can Win</a></h2>
+                            <div class="article-desc">Ninety percent of millionaires in the world today have made some or all of their wealth ...</div>
+                            <a class="article-btn" href="/AGameWeCanWin.html">READ MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="row article">
+                        <div class="col-md-5">
+                            <a href="/WhatKindOfRealEstateShouldIInvestIn.html"><img class="article-image" src="/images/apartment.jpg" alt="Different types of real estate investments"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <h2 class="article-title"><a href="/WhatKindOfRealEstateShouldIInvestIn.html">What Kind of Real Estate Should I Invest In?</a></h2>
+                            <div class="article-desc">Perhaps the first step you should take before buying any real estate is to carefully ...</div>
+                            <a class="article-btn" href="/WhatKindOfRealEstateShouldIInvestIn.html">READ MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="row article">
+                        <div class="col-md-5">
+                            <a href="/ProblemsWithOldHouses.html"><img class="article-image" src="/images/old house.jpg" alt="Problems with old houses"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <h2 class="article-title"><a href="/ProblemsWithOldHouses.html">Problems with Old Houses</a></h2>
+                            <div class="article-desc">Older homes can be a great investment, either to flip, keep as a rental, or to live i ...</div>
+                            <a class="article-btn" href="/ProblemsWithOldHouses.html">READ MORE</a>
+                        </div>
+                    </div>    
+                    
+                    <div class="row article">
+                        <div class="col-md-5">
+                            <a href="/TypesOfPropertyDeeds.html"><img class="article-image" src="/images/deed.jpg" alt="Types of property deeds"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <h2 class="article-title"><a href="/TypesOfPropertyDeeds.html">Types of Property Deeds</a></h2>
+                            <div class="article-desc">If you're investing in real estate, you need to understand what a deed is, how ...</div>
+                            <a class="article-btn" href="/TypesOfPropertyDeeds.html">READ MORE</a>
+                        </div>
+                    </div> 
+                    
+                    <div class="row article">
+                        <div class="col-md-5">
+                            <a href="/HowToAnalyzeANeighborhood.html"><img class="article-image" src="/images/neighborhood.jpg" alt="How to analyze a neighborhood"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <h2 class="article-title"><a href="/HowToAnalyzeANeighborhood.html">How to Analyze a Neighborhood</a></h2>
+                            <div class="article-desc">Knowing how to analyze a neighborhood is a key skill for a real estate investor ...</div>
+                            <a class="article-btn" href="/HowToAnalyzeANeighborhood.html">READ MORE</a>
+                        </div>
+                    </div> 
+
+                    <div class="row article">
+                        <div class="col-md-5">
+                            <a href="/DirectCapitalizationMethod.html"><img class="article-image" src="/images/directcapitalizationmethod.jpg" alt="Direct cap method for analyzing real estate investments"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <h2 class="article-title"><a href="/DirectCapitalizationMethod.html">Direct Capitalization Method - Income Approach to Valuation</a></h2>
+                            <div class="article-desc">The direct capitalization method is a common method used for appraising a property ...</div>
+                            <a class="article-btn" href="/DirectCapitalizationMethod.html">READ MORE</a>
+                        </div>
+                    </div> 
+
+                    <div class="row article">
+                        <div class="col-md-5">
+                            <a href="/InvestingInSingleFamilyHomes.html"><img class="article-image" src="/images/singlefamilyhome.jpg" alt="Pros and cons of single family homes"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <h2 class="article-title"><a href="/InvestingInSingleFamilyHomes.html">Investing in Single Family Homes - Pros and Cons</a></h2>
+                            <div class="article-desc">Many investors wonder what kind of property they should invest in. That will vary depending...</div>
+                            <a class="article-btn" href="/InvestingInSingleFamilyHomes.html">READ MORE</a>
+                        </div>
+                    </div> 
+
+                    <div class="row article">
+                        <div class="col-md-5">
+                            <a href="/HowToMakeMoneyWithRealEstateOptionContracts.html"><img class="article-image" src="/images/commercialproperty.jpg" alt="Real estate option contract investing"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <h2 class="article-title"><a href="/HowToMakeMoneyWithRealEstateOptionContracts.html">How to Make Money with Real Estate Option Contracts</a></h2>
+                            <div class="article-desc">What is an Option Contract? A real estate option contract is a legally binding docume...</div>
+                            <a class="article-btn" href="/HowToMakeMoneyWithRealEstateOptionContracts.html">READ MORE</a>
+                        </div>
+                    </div> 
+
+                    <div class="page-btns">
+                        <a href="/" id="page1" class="page-number selected-page">1</a>
+                        <!-- <a href="#" id="page2" class="page-number">2</a> -->
+                        <!-- <a href="#" id="pageNext" class="page-number">Next Page</a> -->
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="most-popular-header">MOST POPULAR</div>
+
+                    <div class="row most-popular">
+                        <div class="col-md-5">
+                            <a href="/InvestingInSingleFamilyHomes.html"><img class="article-image" src="/images/singlefamilyhome.jpg" alt="Should I buy a single family home as a rental?"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <a href="/InvestingInSingleFamilyHomes.html"><div class="most-popular-title">Investing in Single Family Homes - Pros and Cons</div></a>
+                        </div>
+                    </div>
+
+                    <div class="row most-popular">
+                        <div class="col-md-5">
+                            <a href="/ProblemsWithOldHouses.html"><img class="article-image" src="/images/old house.jpg" alt="Should I buy an old house as an investment?"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <a href="/ProblemsWithOldHouses.html"><div class="most-popular-title">Problems with Old Houses</div></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>               
+
+        <footer></footer>
+    </body>
+</html>
