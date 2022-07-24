@@ -38,26 +38,9 @@ function signup() {
         document.getElementById('signup-error').style.display = "none";
         signupoff();
       });
-
-      // Email.send({
-      //   Host: "smtp.gmail.com",
-      //   Username : "email.alpinexc1@gmail.com",
-      //   Password : "mnxitdqmjbzhcywb", //AlpineXC1$$ mnxitdqmjbzhcywb
-      //   To : 'mcmtrnt3@gmail.com',  
-      //   From : "email.alpinexc1@gmail.com",
-      //   Subject : "All About That Hustle Newsletter Signup",
-      //   Body : document.getElementById('email-input').value + "     From: " + document.getElementById('email-input').value ,
-      // })
-      // .then(function(message){
-      //     document.getElementById('email-input').value = "";
-      //     document.getElementById('signup-error').style.display = "none";
-      //     signupoff();
-      //     // window.location.href = "confirmation.html";
-      // });
   
     }
     else {
-        // signupoff();
         document.getElementById('signup-error').style.display = "block";
         document.getElementById('email-input').style.border = "1px solid rgb(189, 1, 1)";
         document.getElementById('email-input').style.borderRadius = "3px";
@@ -76,7 +59,6 @@ function signup() {
 
 function isNonEmpty(text) {
     if (text.length == 0 || !text || text == null || text == undefined) {
-    //if (typeof text === "string" && text.length > 0 ) {
         return false;
     }
     else {
@@ -85,9 +67,26 @@ function isNonEmpty(text) {
 }
 
 function signupon() {
-    document.getElementById("signup-modal").style.display = "none";
-  }
+  document.getElementById("signup-modal").style.display = "none";
+}
   
-  function signupoff() {
-    document.getElementById("signup-modal").style.display = "none";
+function signupoff() {
+  document.getElementById("signup-modal").style.display = "none";
+}
+
+function calculateFrontEndDti(){
+  var mortPmt = document.getElementById('mortgage-pmt').value;
+  var hoaFee = document.getElementById('hoa-fee').value;
+  var income = document.getElementById('income').value;
+
+  var frontEndDti = ((parseInt(mortPmt) + parseInt(hoaFee)) / income) * 100;
+
+  if (frontEndDti > 0 && frontEndDti != Infinity)
+  {
+    document.getElementById('front-end-dti-result').innerHTML = Math.round(frontEndDti, 2) + "%";
   }
+  else
+  {
+    document.getElementById('front-end-dti-result').innerHTML = "";
+  }
+}

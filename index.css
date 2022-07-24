@@ -383,4 +383,32 @@ main {
     background-color: #f7f8f9;
 }
 
+#front-end-dti-calculator {
+    margin-top: 1rem;
+}
+
+.front-end-dti {
+    display: inline-block;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #161619;
+    font-weight: bold;
+    min-width: 45%;
+}
+
+.front-end-dti-result {
+    color: #27ae60;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.front-end-dti-result:hover {
+    cursor:auto;
+    color: #27ae60;
+}
+
+.front-end-dti-label {
+    min-width: 45%;
+}
+
 /****END OF BLOG POST PAGES****/

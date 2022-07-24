@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="description" content="Calculate your front-end debt-to-income ratio quickly and easily with our free online front-end dti calculator.">
+    <meta name="keywords" content="front-end dti calculator, front-end debt to income ratio calculator, how is front-end DTI calculated, mortgage to income ratio calculator, what is front-end ratio">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Front-End Debt-To-Income Ratio Calculator | All About That Hustle</title>
+        <link rel="icon" href="/images/favicon.jpg">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+     
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-231789926-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-231789926-1');
+        </script>
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1598746267972098"
+        crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+        <link rel="stylesheet" href="/index.css">
+        <script src="/index.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div id="overlay">
+            <div id="text">Sending...</div>
+        </div>
+
+        <div id="signup-modal" class="modal2">
+            <div class="modal-content2">
+                <span class="close2" onclick="closeSignupModal()">&times;</span> 
+                <div class="modal-header2">Sign Up For Our Newsletter!</div>
+                <br>
+                <div>Get our latest content and become a real estate expert</div>
+                <div id="signup-error" class="signup-error">Invalid Email</div>
+                <input id='email-input' class="email-input" type="text" placeholder="Enter Your Email">
+                <div class="newsletter" onclick="signup()">SIGN UP</div>
+            </div>
+        </div>
+
+        <header>
+            <div class="top-line"></div>
+            <div class="myNav">
+                <a href="/" class="blog-title">All About That Hustle</a>
+                <nav>
+                    <ul>
+                        <li>Home</li>
+                        <li>Real Estate Basics</li>
+                        <li>Analyzing Investments</li>
+                        <li>Additional Resources</li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="row">
+                <div class="col-md-8">
+                    
+                    <div class="blog-post-label">INTRO TO REAL ESTATE INVESTING</div>
+                    <h1 class="blog-post-title">Front-End Debt-To-Income Ratio</h1>
+                    <img src="/images/frontenddticalculator.jpg" class="blog-post-image" alt="debt to income ratio calculator">
+                    <br><br>
+
+                    <!-- FIX put a js dti calculator here -->
+                    <h2 class="blog-post-h2">Front-End Debt-To-Income Ratio Calculator</h2>
+                    <form id="front-end-dti-calculator">
+                        <div>
+                            <label class="front-end-dti-label" for="mortgage-pmt">Monthly Mortgage Payment:</label>
+                            <input id="mortgage-pmt" name="mortgage-pmt" type="number" onchange="calculateFrontEndDti();">
+                        </div>
+                        <div>
+                            <label class="front-end-dti-label" for="hoa-fee">Monthly HOA Fee:</label>
+                            <input id="hoa-fee" name="hoa-fee" type="number" onchange="calculateFrontEndDti();">
+                        </div>
+                        <div>
+                            <label class="front-end-dti-label" for="income">Gross Monthly Income:</label>
+                            <input id="income" name="income" type="number" onchange="calculateFrontEndDti();">
+                        </div> 
+                    </form>
+                    <div class="front-end-dti">Front-End Debt-To-Income Ratio: </div>
+                    <a href="javascript: void(0);" id="front-end-dti-result" class="front-end-dti-result"></a>
+                    <br>
+
+                    <br><br>
+                    <h2 class="blog-post-h2">What is the Front-End DTI Ratio?</h2>
+                    <div class="blog-post-text">
+                       The front-end ratio, also commonly referred to as the housing ratio or the mortgage to income ratio, 
+                       measures what percentage of a person's income goes towards their mortgage. It's a metric that lenders 
+                       use to evaluate risk when screening potential clients because it gives insight into how likely it is 
+                       that a person will be able to repay a loan. A low front-end ratio suggests you have sufficient income to 
+                       cover your expenses and pay off your mortgage, while a high ratio means you may be more likely to default 
+                       on a loan, and lenders will be more reluctant to loan you money.
+                       <br><br>
+                       The debt-to-income ratio is a good indicator of how much mortgage you can afford and signals how well 
+                       you can handle debt. A good DTI may help you qualify for a mortgage, but don't panic if your front-end 
+                       ratio isn't perfect. It's not the only piece of the puzzle. Lenders look at multiple criteria when evaluating 
+                       applicants such as their income, credit score, savings accounts, debt obligations, and more.
+                    </div>
+
+
+                    <h2 class="blog-post-h2">How is the Front-End DTI Ratio Calculated?</h2>
+                    <div class="blog-post-text">
+                        Calculating your front-end ratio is easier than you may expect. Simply divide your monthly mortgage payment 
+                        by your gross monthly income and multiply that number by 100. For example, if your monthly mortgage payment 
+                        was $2,200, and your gross monthly income (before taxes) was $7,800, then your front-end ratio would be 
+                        ($2,200 / $7,800) * 100 = 28%.
+                        <br><br>
+                        <div class="blog-post-comment">
+                            (Mortgage Pmt / Gross Monthly Income) * 100 = Front-End DTI Ratio
+                        </div>
+                        <br>
+                        For this formula the mortgage payment includes PITI (principal, interest, taxes, insurance), 
+                        mortgage insurance, HOA fees, and all other home related debt obligations.
+                        <br><br>
+                        It's important to note that the front-end ratio only considers housing expenses and doesn't 
+                        consider any other forms of debt such as student loans, car payments, child support, or payments 
+                        on rental properties. If you have other debts like this and are applying for a loan, it is important 
+                        to also look at the back-end DTI ratio, which accounts for all forms of debt.
+                        <br><br>
+                        Perhaps the quickest and easiest way to calculate your front-end debt to income ratio is to use a 
+                        free online calculator like the one at the top of this page.
+                    </div>
+
+                    <h2 class="blog-post-h2">What is a Good Front-End Ratio?</h2>
+                    <div class="blog-post-text">
+                        You now know what the front-end ratio is and why it's used. You also know the internals of how it is calculated 
+                        and have probably used the calculator tool at the top of this page to figure out what your number is. If so, you 
+                        may be wondering what a good front-end ratio is?
+                        <br><br>
+                        In most cases when applying for a loan the lender will want to see a front-end ratio that is less than 28%. 
+                        However, if you're applying for an FHA loan the cutoff is typically 31% instead of 28%. 
+                        This shows you have a health relationship with debt and most likely won't be overburdened with a mortgage payment. 
+                        <br><br>
+                        When it comes to DTI ratios, lower is better. A lower ratio may help you qualify for a mortgage easier 
+                        and may allow you to borrow more money if needed.
+                    </div>
+
+                    <h2 class="blog-post-h2">What to do if my Debt-To-Income Ratio is too High?</h2>
+                    <div class="blog-post-text">
+                        If you find yourself in a situation where your debt-to-income ratio is preventing you from getting a loan, don't 
+                        give up hope. That are several ways you can attempt to improve your situation. Some methods that may be worth 
+                        pursuing include looking at different loan options, paying off debts or restructuring those debts to have 
+                        smaller monthly obligations, getting a cosigner on your loan, increasing your income with a second job or a 
+                        side hustle, or shopping for a lower mortgage rate. These strategies can lower your DTI ratio and help you 
+                        qualify for a mortgage.
+                    </div>
+
+                    
+                    <div class="related-posts">Related Posts</div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="/DirectCapitalizationMethod.html">
+                                <img src="/images/directcapitalizationmethod.jpg" class="blog-post-image" alt="Direct cap method">
+                                <div class="related-posts-article-title">Direct Capitalization Method - Income Approach to Valuation</div>
+                            </a>
+                        </div>
+                    </div>
+                    <br><br>
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="most-popular-header">MOST POPULAR</div>
+
+                    <div class="row most-popular">
+                        <div class="col-md-5">
+                            <a href="/InvestingInSingleFamilyHomes.html"><img class="article-image" src="/images/singlefamilyhome.jpg" alt="Should I buy a single family home as a rental?"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <a href="/InvestingInSingleFamilyHomes.html"><div class="most-popular-title">Investing in Single Family Homes - Pros and Cons</div></a>
+                        </div>
+                    </div>
+
+                    <div class="row most-popular">
+                        <div class="col-md-5">
+                            <a href="/ProblemsWithOldHouses.html"><img class="article-image" src="/images/old house.jpg" alt="Should I buy an old house as an investment?"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <a href="/ProblemsWithOldHouses.html"><div class="most-popular-title">Problems with Old Houses</div></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>               
+
+        <footer class="blog-post-footer">
+            <a href="/">All About That Hustle</a>
+        </footer>
+    </body>
+</html>
