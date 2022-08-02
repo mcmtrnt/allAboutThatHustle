@@ -90,3 +90,33 @@ function calculateFrontEndDti(){
     document.getElementById('front-end-dti-result').innerHTML = "";
   }
 }
+
+function calculateBackEndDti(){
+  console.log('here');
+  var mortPmt = document.getElementById('mortgage-pmt').value;
+  var hoaFee = document.getElementById('hoa-fee').value;
+  var ccPmt = document.getElementById('cc-pmt').value;
+  var carPmt = document.getElementById('car-pmt').value;
+  var studentLoan = document.getElementById('student-loan').value;
+  var childSupport = document.getElementById('child-support').value;
+  var income = document.getElementById('income').value;
+  var totalDebt = 0
+
+  if (parseInt(mortPmt) > 0) totalDebt += parseInt(mortPmt);
+  if (parseInt(hoaFee) > 0) totalDebt += parseInt(hoaFee);
+  if (parseInt(ccPmt) > 0) totalDebt += parseInt(ccPmt);
+  if (parseInt(carPmt) > 0) totalDebt += parseInt(carPmt);
+  if (parseInt(studentLoan) > 0) totalDebt += parseInt(studentLoan);
+  if (parseInt(childSupport) > 0) totalDebt += parseInt(childSupport);
+
+  var backEndDti = ((totalDebt) / income) * 100;
+  console.log(backEndDti);
+  if (backEndDti > 0 && backEndDti != Infinity)
+  {
+    document.getElementById('back-end-dti-result').innerHTML = Math.round(backEndDti, 2) + "%";
+  }
+  else
+  {
+    document.getElementById('back-end-dti-result').innerHTML = "";
+  }
+}

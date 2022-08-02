@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="description" content="Free online debt to income ratio calculator. Calculate your current dti ratio and see how much mortgage you may be able to qualify for.">
+    <meta name="keywords" content="back-end dti calculator, back-end debt to income ratio calculator, how is back-end DTI calculated, dti mortgage calculator, what is back-end ratio">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Back-End Debt-To-Income Ratio Calculator | All About That Hustle</title>
+        <link rel="icon" href="/images/favicon.jpg">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+     
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-231789926-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-231789926-1');
+        </script>
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1598746267972098"
+        crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+        <link rel="stylesheet" href="/index.css">
+        <script src="/index.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div id="overlay">
+            <div id="text">Sending...</div>
+        </div>
+
+        <div id="signup-modal" class="modal2">
+            <div class="modal-content2">
+                <span class="close2" onclick="closeSignupModal()">&times;</span> 
+                <div class="modal-header2">Sign Up For Our Newsletter!</div>
+                <br>
+                <div>Get our latest content and become a real estate expert</div>
+                <div id="signup-error" class="signup-error">Invalid Email</div>
+                <input id='email-input' class="email-input" type="text" placeholder="Enter Your Email">
+                <div class="newsletter" onclick="signup()">SIGN UP</div>
+            </div>
+        </div>
+
+        <header>
+            <div class="top-line"></div>
+            <div class="myNav">
+                <a href="/" class="blog-title">All About That Hustle</a>
+                <nav>
+                    <ul>
+                        <li>Home</li>
+                        <li>Real Estate Basics</li>
+                        <li>Analyzing Investments</li>
+                        <li>Additional Resources</li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="row">
+                <div class="col-md-8">
+                    
+                    <div class="blog-post-label">INTRO TO REAL ESTATE INVESTING</div>
+                    <h1 class="blog-post-title">Back-End Debt-To-Income Ratio</h1>
+                    <img src="/images/backenddticalculator.jpg" class="blog-post-image" alt="debt to income ratio calculator">
+                    <br><br>
+
+                    <h2 class="blog-post-h2">Back-End Debt-To-Income Ratio Calculator</h2>
+                    <form id="front-end-dti-calculator">
+                        <div>
+                            <label class="front-end-dti-label" for="mortgage-pmt">Monthly Mortgage Payment:</label>
+                            <input id="mortgage-pmt" name="mortgage-pmt" type="number" onchange="calculateBackEndDti();">
+                        </div>
+                        <div>
+                            <label class="front-end-dti-label" for="hoa-fee">Monthly HOA Fee:</label>
+                            <input id="hoa-fee" name="hoa-fee" type="number" onchange="calculateBackEndDti();">
+                        </div>
+                        <div>
+                            <label class="front-end-dti-label" for="cc-pmt">Monthly Credit Card Payment:</label>
+                            <input id="cc-pmt" name="cc-pmt" type="number" onchange="calculateBackEndDti();">
+                        </div>
+                        <div>
+                            <label class="front-end-dti-label" for="car-pmt">Monthly Car Payment:</label>
+                            <input id="car-pmt" name="car-pmt" type="number" onchange="calculateBackEndDti();">
+                        </div>
+                        <div>
+                            <label class="front-end-dti-label" for="student-loan">Monthly Student Loan Payment:</label>
+                            <input id="student-loan" name="student-loan" type="number" onchange="calculateBackEndDti();">
+                        </div>
+                        <div>
+                            <label class="front-end-dti-label" for="child-support">Monthly Child Support Payment:</label>
+                            <input id="child-support" name="child-support" type="number" onchange="calculateBackEndDti();">
+                        </div>
+                        <div>
+                            <label class="front-end-dti-label" for="income">Gross Monthly Income:</label>
+                            <input id="income" name="income" type="number" onchange="calculateBackEndDti();">
+                        </div> 
+                    </form>
+                    <div class="front-end-dti">Back-End Debt-To-Income Ratio: </div>
+                    <a href="javascript: void(0);" id="back-end-dti-result" class="front-end-dti-result"></a>
+                    <br>
+
+                    <br><br>
+                    <h2 class="blog-post-h2">What is the Back-End DTI Ratio?</h2>
+                    <div class="blog-post-text">
+                        The back-end ratio, also known as the debt-to-income ratio is a metric used by mortgage lenders to evaluate the likelihood a person will be able to pay off a loan.
+                        The DTI ratio shows what percentage of your gross monthly income goes toward debt payments. People with high debt-to-income ratios are viewed as more risky candidates and may have a harder time qualifying for a mortgage.
+                        On the other hand, people with a low debt ratio are viewed as more favorable candidates and may qualify for more favorable mortgage terms such as a lower interest rate. A low DTI sends a signal to lenders that
+                        you have a positive, healthy relationship with debt and taking on a mortgage isn't going to push you too far that you end up defaulting on the loan.
+                        If you don't have a good back-end ratio don't panic, it's not the only factor that is considered when reviewing mortgage applicants. If you have a good credit score, a large savings account, or other financial boons you
+                        may still qualify for a mortgage even with a poor DTI ratio.
+                    </div>
+
+
+                    <h2 class="blog-post-h2">How to Calculate Debt to Income Ratio</h2>
+                    <div class="blog-post-text">
+                        The back-end debt-to-income ratio is calculated by dividing monthly debt obligations by gross monthly income.
+                        The back-ratio differs from the front-end ratio in the sense that it considers all of your combined monthly debts, not just mortgage debts.
+                        Examples of monthly debts that are included in the calculation are:
+                        <ul>
+                            <li>Mortgage / rent payments</li>
+                            <li>Credit card debt (minimum monthly payment)</li>
+                            <li>Car loans</li>
+                            <li>Student loans</li>
+                            <li>Child support</li>
+                            <li>HOA fees</li>
+                        </ul>
+                        Using all debt obligations in the calculation gives a clearer picture of your overall financial health and that is why lenders typically weigh it more heavily than the front end ratio. Though both are important.
+                        <br><br>
+                        To illustrate how easy it is to calculate your back-end debt ratio let's walk through an example together. Assume you make $6,500 / month before taxes and you have an $1,800 mortgage payment and a $400 car payment that are due
+                        every month. You don't have any credit card debt, student loans, or other forms of debt. In this scenario your debt-to-income ratio could be calculated as (($1,800 + $400) / $6,500) * 100 = 33.85%.
+                        Since 33% is less than the standard cutoff of 36% the ratio indicates that you have an appropriate amount of debt and should be able to make all your payments every month.
+                        <br><br>
+                        An even easier way to calculate your DTI ratio is to use our free online calculator at the top of this page. Just enter your monthly payments and your gross monthly income and we will calculate your back-end ratio for you.
+                        If you want to calculate your front end ratio we have another free calculator you can use <a href="/FrontEndDTICalculator.html" class="internalLink">here</a>.
+                    </div>
+
+                    <h2 class="blog-post-h2">What is a Good Back-End Ratio?</h2>
+                    <div class="blog-post-text">
+                        Most lenders want people to have a back-end ratio less than 36%. This is the standard cutoff for what most lenders deem acceptable for a conventional mortgage.
+                        You may be able to find a lender willing to work with you even if your dti is higher than the standard but in most cases if you have a debt ratio above 40% you may get stuck with a higher interest rate, be required to provide a larger down payment, or you may not qualify for a loan at all.
+                        Note that these cutoffs only apply for conventional loans, if you are applying for a different type of mortgage such as a VA loan the acceptable limits will likely be different.
+                        <br><br>
+                        Regardless of what kind of loan you are wanting, lender's will often lend you more money than you can afford.
+                        Just because you get approved for an amount doesn't mean you should borrow the entire sum.
+                        The debt to income ratio doesn't consider day-to-day expenses on items like food, diapers, clothes, utility bills, or insurance payments.
+                        As a result, the DTI ratio will often overestimate the amount of house you can afford. My advice here is to be smart, follow a budget, and know how large of a mortgage you can afford before asking your lender.
+                        Remember, the more money they lend you the more money they make, so they want you to borrow as much as possible.
+                    </div>
+
+                    <h2 class="blog-post-h2">How to Lower your Debt-to-Income Ratio</h2>
+                    <div class="blog-post-text">
+                        If your back-end DTI ratio is preventing you from qualifying for a mortgage don't give up hope. There are several effective strategies you can use to lower your debt ratio.
+                        <ul>
+                            <li>Pay off debt - When you pay off debt your back-end ratio goes down. Paying off debt isn't easy, but it is possible. I recommend using the Dave Ramsey debt-snowball technique where you pay off your smallest debt first and then put the money that used to go towards that debt into paying off your next smallest debt. You do this until all of your debts are paid off.</li>
+                            <li>Transfer debt to lower interest rate forms - Not all forms of debt have the same interest rates and transferring a high interest credit card balance to a loan with a lower interest rate reduces your monthly payment and thus reduces your back-end debt-to-income ratio.</li>
+                            <li>Increase your income - An alternative solution is to focus on the other side of the equation and find ways to increase your income. This might mean starting a side hustle or working a second job in the evenings and weekends. A higher income means a smaller portion of your income is needed to pay your monthly debt obligations which means a lower DTI.</li>
+                            <li>Find a less expensive home to purchase - If none of the above solutions work for you, you may need to consider finding a less expensive home to purchase. In theory, the smaller the loan is the easier it should be to qualify for.</li>
+                        </ul>
+                    </div>
+
+                    
+                    <div class="related-posts">Related Posts</div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="/FrontEndDTICalculator.html">
+                                <img src="/images/frontenddticalculator.jpg" class="blog-post-image" alt="Front-End DTI Calculator">
+                                <div class="related-posts-article-title">Front-End Debt-To-Income Ratio Calculator</div>
+                            </a>
+                        </div>
+                    </div>
+                    <br><br>
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="most-popular-header">MOST POPULAR</div>
+
+                    <div class="row most-popular">
+                        <div class="col-md-5">
+                            <a href="/InvestingInSingleFamilyHomes.html"><img class="article-image" src="/images/singlefamilyhome.jpg" alt="Should I buy a single family home as a rental?"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <a href="/InvestingInSingleFamilyHomes.html"><div class="most-popular-title">Investing in Single Family Homes - Pros and Cons</div></a>
+                        </div>
+                    </div>
+
+                    <div class="row most-popular">
+                        <div class="col-md-5">
+                            <a href="/ProblemsWithOldHouses.html"><img class="article-image" src="/images/old house.jpg" alt="Should I buy an old house as an investment?"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <a href="/ProblemsWithOldHouses.html"><div class="most-popular-title">Problems with Old Houses</div></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>               
+
+        <footer class="blog-post-footer">
+            <a href="/">All About That Hustle</a>
+        </footer>
+    </body>
+</html>

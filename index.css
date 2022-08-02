@@ -411,4 +411,9 @@ main {
     min-width: 45%;
 }
 
+.internalLink {
+    color: #84A8C1;
+    font-style: italic;
+}
+
 /****END OF BLOG POST PAGES****/
