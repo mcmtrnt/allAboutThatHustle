@@ -92,7 +92,6 @@ function calculateFrontEndDti(){
 }
 
 function calculateBackEndDti(){
-  console.log('here');
   var mortPmt = document.getElementById('mortgage-pmt').value;
   var hoaFee = document.getElementById('hoa-fee').value;
   var ccPmt = document.getElementById('cc-pmt').value;
@@ -110,7 +109,6 @@ function calculateBackEndDti(){
   if (parseInt(childSupport) > 0) totalDebt += parseInt(childSupport);
 
   var backEndDti = ((totalDebt) / income) * 100;
-  console.log(backEndDti);
   if (backEndDti > 0 && backEndDti != Infinity)
   {
     document.getElementById('back-end-dti-result').innerHTML = Math.round(backEndDti, 2) + "%";
@@ -118,5 +116,38 @@ function calculateBackEndDti(){
   else
   {
     document.getElementById('back-end-dti-result').innerHTML = "";
+  }
+}
+
+function calculateDirectCapMethod()
+{
+  var noi = document.getElementById('noi').value;
+  var capRate = document.getElementById('cap-rate').value;
+
+  var propertyValue = parseInt(noi) / parseFloat(capRate / 100);
+  if (propertyValue > 0 && propertyValue != Infinity)
+  {
+    document.getElementById('direct-capitalization-result').innerHTML = "$" + Math.round(propertyValue, 2).toLocaleString('en-US');
+  }
+  else
+  {
+    document.getElementById('direct-capitalization-result').innerHTML = "";
+  }
+}
+
+function calculateCapRate()
+{
+  var capRateNoi = document.getElementById('cap-rate-noi').value;
+  var salesPrice = document.getElementById('sales-price').value;
+
+  var capRate = (parseInt(capRateNoi) / parseInt(salesPrice)) * 100;
+  console.log(capRate);
+  if (capRate > 0 && capRate != Infinity)
+  {
+    document.getElementById('cap-rate-result').innerHTML = parseFloat(capRate).toFixed(2) + "%";
+  }
+  else
+  {
+    document.getElementById('cap-rate-result').innerHTML = "";
   }
 }

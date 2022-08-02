@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <meta charset="UTF-8">
-    <meta name="description" content="Can you make money with real estate? Yes! You can win with real estate! Here's why ...">
-    <meta name="keywords" content="how to get started with real estate investing, can I make money with real estate, what do I need to know to invest in real estate, win with real estate">
+    <meta name="description" content="Calculate the value of an income-producing property with the direct capitalization method. Our free online calculator makes it easy.">
+    <meta name="keywords" content="direct capitalization method, direct cap method, income approach to valuation, direct capitalization calculator">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <head>
         <title>Direct Capitalization Method: Income Approach to Valuation | All About That Hustle</title>
@@ -74,6 +74,24 @@
                     <div class="blog-post-label">INTRO TO REAL ESTATE INVESTING</div>
                     <h1 class="blog-post-title">Direct Capitalization Method: Income Approach to Valuation</h1>
                     <img src="/images/directcapitalizationmethod.jpg" class="blog-post-image" alt="Direct Capitalization Method">
+                    
+                    <br><br>
+                    <h2 class="blog-post-h2">Calculate the Value of an Income-Producing Property</h2>
+                    <br>
+                    <form id="direct-capitalization-calculator">
+                        <div>
+                            <label class="front-end-dti-label" for="noi">Annual Net Operating Income:</label>
+                            <input id="noi" name="noi" type="number" onchange="calculateDirectCapMethod();">
+                        </div>
+                        <div>
+                            <label class="front-end-dti-label" for="cap-rate">Market Cap Rate:</label>
+                            <input id="cap-rate" name="cap-rate" type="number" onchange="calculateDirectCapMethod();">%
+                        </div>
+                    </form>
+                    <div class="front-end-dti">Property Value:</div>
+                    <a href="javascript: void(0);" id="direct-capitalization-result" class="calculator-result"></a>
+                    
+                    <br><br>
                     <div class="blog-post-text">
                         The direct capitalization method is an approach for appraising a property's value based on the income it generates. Being able to quickly and accurately estimate the value of a property is a crucial skill for any real estate investor. And the fact that the direct capitalization approach is easy to calculate and use makes it a great technique to know.
                     </div>
@@ -122,6 +140,23 @@
                         <br>
                         The cap rate used in the direct capitalization method formula is determined using sales data from similar properties; to come up with an average cap rate for the market. To get reliable results, you'll need enough comparable properties to represent the market accurately. Ideally, you will use comps from properties with similar vacancy rates to the subject property because vacancy rates heavily influence the estimated value of a property when using the direct cap approach.
                     </div>
+
+                    <br>
+                    <h2 class="blog-post-h2">Cap Rate Calculator</h2>
+                    <br>
+                    <form id="cap-rate-calculator">
+                        <div>
+                            <label class="front-end-dti-label" for="cap-rate-noi">Annual Net Operating Income:</label>
+                            <input id="cap-rate-noi" name="cap-rate-noi" type="number" onchange="calculateCapRate();">
+                        </div>
+                        <div>
+                            <label class="front-end-dti-label" for="sales-price">Sales Price:</label>
+                            <input id="sales-price" name="sales-price" type="number" onchange="calculateCapRate();">
+                        </div>
+                    </form>
+                    <div class="front-end-dti">Cap Rate:</div>
+                    <a href="javascript: void(0);" id="cap-rate-result" class="calculator-result"></a>
+                    <br><br><br>
 
                     <h2 class="blog-post-h2">When to use the Direct Capitalization Method</h2>
                     <div class="blog-post-text">

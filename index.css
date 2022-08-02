@@ -396,13 +396,13 @@ main {
     min-width: 45%;
 }
 
-.front-end-dti-result {
+.calculator-result {
     color: #27ae60;
     font-weight: bold;
     font-size: 1.1rem;
 }
 
-.front-end-dti-result:hover {
+.calculator-result:hover {
     cursor:auto;
     color: #27ae60;
 }
@@ -414,6 +414,11 @@ main {
 .internalLink {
     color: #84A8C1;
     font-style: italic;
+}
+
+.sideAd {
+    margin-top: 1rem;
+    text-align: center;
 }
 
 /****END OF BLOG POST PAGES****/
