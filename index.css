@@ -396,6 +396,14 @@ main {
     min-width: 45%;
 }
 
+.second-result {
+    display: inline-block;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    font-weight: bold;
+    min-width: 45%;
+}
+
 .calculator-result {
     color: #27ae60;
     font-weight: bold;

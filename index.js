@@ -141,7 +141,6 @@ function calculateCapRate()
   var salesPrice = document.getElementById('sales-price').value;
 
   var capRate = (parseInt(capRateNoi) / parseInt(salesPrice)) * 100;
-  console.log(capRate);
   if (capRate > 0 && capRate != Infinity)
   {
     document.getElementById('cap-rate-result').innerHTML = parseFloat(capRate).toFixed(2) + "%";
@@ -150,4 +149,21 @@ function calculateCapRate()
   {
     document.getElementById('cap-rate-result').innerHTML = "";
   }
+}
+
+function calculateInterestPayment()
+{
+  var mortgageBalance = document.getElementById('mortgage-balance').value;
+  var annIntRate = document.getElementById('ann-int-rate').value;
+
+  var interestPmt = parseInt(mortgageBalance) * ((annIntRate / 100) / 12);
+  if (interestPmt > 0 && interestPmt != Infinity)
+  {
+    document.getElementById('interest-payment-result').innerHTML = "$" + parseFloat(interestPmt).toLocaleString('en-US');
+  }
+  else
+  {
+    document.getElementById('interest-payment-result').innerHTML = "";
+  }
+
 }

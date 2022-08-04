@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="description" content="This amortization calculator shows how each monthly payment affects the total balance of a mortgage loan over time.">
+    <meta name="keywords" content="amortization calculator, amortization schedule calculator, loan amortization calculator, loan payment calculator, pay off mortgage calculator">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Amortization Loan Payment Calculator | All About That Hustle</title>
+        <link rel="icon" href="/images/favicon.jpg">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+     
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-231789926-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-231789926-1');
+        </script>
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1598746267972098"
+        crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+        <link rel="stylesheet" href="/index.css">
+        <script src="/index.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div id="overlay">
+            <div id="text">Sending...</div>
+        </div>
+
+        <div id="signup-modal" class="modal2">
+            <div class="modal-content2">
+                <span class="close2" onclick="closeSignupModal()">&times;</span> 
+                <div class="modal-header2">Sign Up For Our Newsletter!</div>
+                <br>
+                <div>Get our latest content and become a real estate expert</div>
+                <div id="signup-error" class="signup-error">Invalid Email</div>
+                <input id='email-input' class="email-input" type="text" placeholder="Enter Your Email">
+                <div class="newsletter" onclick="signup()">SIGN UP</div>
+            </div>
+        </div>
+
+        <header>
+            <div class="top-line"></div>
+            <div class="myNav">
+                <a href="/" class="blog-title">All About That Hustle</a>
+                <nav>
+                    <ul>
+                        <li>Home</li>
+                        <li>Real Estate Basics</li>
+                        <li>Analyzing Investments</li>
+                        <li>Additional Resources</li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="row">
+                <div class="col-md-8">
+                    
+                    <div class="blog-post-label">INTRO TO REAL ESTATE INVESTING</div>
+                    <h1 class="blog-post-title">Amortization Loan Payment Calculator</h1>
+                    <img src="/images/amortization-schedule.jpg" class="blog-post-image" alt="debt to income ratio calculator">
+                    <br><br>
+
+                    <h2 class="blog-post-h2">What is an Amortization Schedule?</h2>
+                    <div class="blog-post-text">
+                        When a loan is amortized each monthly payment is divided into principal and interest payments. The principal portion is applied towards the loan balance and
+                        reduces the total amount due while the interest portion is paid to the lender as a fee for borrowing money. Typically, in the early years of a mortgage the
+                        majority of each payment is used to pay interest and later in the life of the loan the majority goes toward principal. It is very common for mortgages, car
+                        loans, and other forms of debt to be amortized. And as a result, knowing how to read and understand an amortizaion schedule is a very useful skill.
+                        <br><br>
+                        An amortization schedule is a table or chart that shows how each monthly payment affects the total balance of a loan over time.
+                        The amortization table details how much of each payment is applied toward paying down the loan (principal) and how much is paid toward interest.
+                        An amortization calculator, also sometimes called a loan payment calculator or mortgage calculator, is a great tool for tracking the current status of a loan
+                        and can be used to calculate how making additional payments will reduce the balance and duration of the loan. In many cases, paying a little extra each month
+                        can drastically reduce the time it will take to pay off the loan and the amount you will pay in interest. For example, If you had a $300,000 30-year mortgage
+                        with a 6% interest rate and paid just $50 extra every month you would save $29,212 in interest and pay off the loan 2 years early.
+                        <br><br>
+                        A mortgage calculator with an amortization chart can help you understand how to save money on your mortage and pay off your loan faster.
+                    </div>
+
+                    <h2 class="blog-post-h2">How to Read an Amortization Table</h2>
+                    <div class="blog-post-text">
+                        A typical amortization calculator will display a table with each row representing on period in the life of the loan (usually months). The chart is usually read
+                        from top to bottom with the top row representing the first month in the loan and the bottom row representing the last payment due. The table also usually has four
+                        columns. The first column shows the outstanding loan balance at the beginning of the period. The next two rows show the amount of the monthly payment that will be
+                        applied toward interest and principal and the final row shows what the new loan balance will be after that periods payment. For a standard loan the last row in the
+                        table will have an ending balance of $0 indicating that the loan will have been paid in full at that time.
+                    </div>
+
+                    <h2 class="blog-post-h2">How to Calculate Monthly Mortgage Payment with Amortization</h2>
+                    <div class="blog-post-text">
+                        In many cases it may be useful to calculate what the monthly payment would be for a loan without having to talk to your lender. Fortunately,
+                        calculating the monthly payment is fairly straightforward using the amortization formula.
+                        <br><br>
+                        The amortization formula has 4 variables:
+                        <br><br>
+                        <b>PMT</b> = Monthly payment needed to pay off the loan
+                        <br>
+                        <b>PV</b> = Present value (Total loan amount)
+                        <br>
+                        <b>i</b> = Periodic interest rate (if monthly payments are made then use the annual interest rate divided by 12)
+                        <br>
+                        <b>n</b> = Total number of payments (if monthly payments are made then use the number of months in the loan. Ex. 30 year loan * 12 months = 360 payments)
+                        <br><br>
+                        The formula to calculate the monthly payment for a loan is as follows:
+                        <br><br>
+                        <div class="blog-post-comment">
+                            PMT = (i * PV) / (1 - (1+i)^-n)
+                        </div>
+                        <br>
+                        Even easier, simply plug your numbers into the calculator below to see what the monthly payments would be.
+                    </div>
+
+                    <h2 class="blog-post-h2">How to Calculate Payment Toward Interest and Payment Toward Principal</h2>
+                    <div class="blog-post-text">
+                        <b>P</b> = Principal (Remaining balance on the loan)
+                        <br>
+                        <b>i</b> = Periodic interest rate (If monthly payments are made then use the annual interest rate divided by 12)
+                        <br><br>
+                        <div class="blog-post-comment">
+                            Interest = P * i
+                        </div>
+                    </div>
+
+                    <br>
+                    <h2 class="blog-post-h2">Mortgage Interest Payment Calculator</h2>
+                    <form id="principal-interest-calculator">
+                        <div>
+                            <label class="front-end-dti-label" for="mortgage-balance">Remaining Mortgage Balance:</label>
+                            <input id="mortgage-balance" name="mortgage-balance" type="number" onchange="calculateInterestPayment();">
+                        </div>
+                        <div>
+                            <label class="front-end-dti-label" for="ann-int-rate">Annual Interest Rate:</label>
+                            <input id="ann-int-rate" name="ann-int-rate" type="number" onchange="calculateInterestPayment();">%
+                        </div>
+                    </form>
+                    <div class="front-end-dti">Interest Payment: </div>
+                    <a href="javascript: void(0);" id="interest-payment-result" class="calculator-result"></a>
+                    <br><br>
+                    <br>
+                    <div class="blog-post-comment">
+                        Principal = Monthly payment - Payment toward interest
+                    </div>
+                    <br>
+                    Each month you make a payment the outstanding principal on the loan is reduced by that month's prinicipal payment.
+
+                    <br><br>
+                    <h2 class="blog-post-h2">How Can I Pay Off My Loan Early?</h2>
+                    <div class="blog-post-text">
+                        Increase your monthly payment - Paying a little extra every month instead of the minimum amount due can greatly reduce the total amount you'll pay over the life of the
+                        loan and can also help you pay off your mortgage sooner.
+                        <br><br>
+                        Make biweekly payments instead of monthly payments - A tatic many people use to pay off their mortgage early is to make biweekly payments instead of monthly payments.
+                        With biweekly payments you pay half of your monthly payment every two weeks. Since some months have 5 weeks you will make two extra payments
+                        every year which is a great way to pay off your debt sooner.
+                        <br><br>
+                        Make additional payments - Anytime you get additional income outside of your regular pay, such as getting a bonus at work, an extra large commission check, or income
+                        from a side hustle, consider putting a portion of it toward paying down your loan. Any time you make an additional payment toward a loan, the entire amount goes toward
+                        paying down the principal loan balance and none of it goes toward interest. This can significantly impact how soon your mortgage gets paid off.
+                    </div>
+
+                    <h2 class="blog-post-h2">Why is My Actual Mortgage Payment Higher than what the Amortization Calculator Says?</h2>
+                    <div class="blog-post-text">
+                        Amortization calculators only consider the principal and interest paid on your loan. However, in many cases a mortgage payment may include other costs that aren't
+                        represented in an amortization chart. For example, property taxes, home insurance, mortgage insurance, and even HOA fees will sometimes be included in a mortgage payment.
+                        None of those additional costs affect how quickly you pay off your loan and as a result they aren't included in an amortization schedule. To get a more accurate representation
+                        of what your mortgage payment will be, you need to consider all of the costs included.
+                    </div>
+                    
+                    <div class="related-posts">Related Posts</div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="/DirectCapitalizationMethod.html">
+                                <img src="/images/directcapitalizationmethod.jpg" class="blog-post-image" alt="Direct cap method">
+                                <div class="related-posts-article-title">Direct Capitalization Method - Income Approach to Valuation</div>
+                            </a>
+                        </div>
+                    </div>
+                    <br><br>
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="most-popular-header">MOST POPULAR</div>
+
+                    <div class="row most-popular">
+                        <div class="col-md-5">
+                            <a href="/InvestingInSingleFamilyHomes.html"><img class="article-image" src="/images/singlefamilyhome.jpg" alt="Should I buy a single family home as a rental?"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <a href="/InvestingInSingleFamilyHomes.html"><div class="most-popular-title">Investing in Single Family Homes - Pros and Cons</div></a>
+                        </div>
+                    </div>
+
+                    <div class="row most-popular">
+                        <div class="col-md-5">
+                            <a href="/ProblemsWithOldHouses.html"><img class="article-image" src="/images/old house.jpg" alt="Should I buy an old house as an investment?"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <a href="/ProblemsWithOldHouses.html"><div class="most-popular-title">Problems with Old Houses</div></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>               
+
+        <footer class="blog-post-footer">
+            <a href="/">All About That Hustle</a>
+        </footer>
+    </body>
+</html>
