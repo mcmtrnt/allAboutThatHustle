@@ -127,6 +127,27 @@
                         Even easier, simply plug your numbers into the calculator below to see what the monthly payments would be.
                     </div>
 
+                    <br>
+                    <h2 class="blog-post-h2">Monthly Mortgage Payment Calculator</h2>
+                    <form id="principal-interest-calculator">
+                        <div>
+                            <label class="front-end-dti-label" for="loan-amt">Loan Amount:</label>
+                            <input id="loan-amt" name="loan-amt" type="number" onchange="calculateMonthlyPayment();">
+                        </div>
+                        <div>
+                            <label class="front-end-dti-label" for="loan-term">Loan Term (Years):</label>
+                            <input id="loan-term" name="loan-term" type="number" onchange="calculateMonthlyPayment();">
+                        </div>
+                        <div>
+                            <label class="front-end-dti-label" for="annual-int-rate">Annual Interest Rate:</label>
+                            <input id="annual-int-rate" name="annual-int-rate" type="number" onchange="calculateMonthlyPayment();">%
+                        </div>
+                    </form>
+                    <div class="front-end-dti">Monthly Payment: </div>
+                    <a href="javascript: void(0);" id="monthly-payment-result" class="calculator-result"></a>
+                    <br><br>
+
+                    <br>
                     <h2 class="blog-post-h2">How to Calculate Payment Toward Interest and Payment Toward Principal</h2>
                     <div class="blog-post-text">
                         <b>P</b> = Principal (Remaining balance on the loan)

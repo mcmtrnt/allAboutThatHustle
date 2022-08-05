@@ -165,5 +165,26 @@ function calculateInterestPayment()
   {
     document.getElementById('interest-payment-result').innerHTML = "";
   }
-
 }
+
+function calculateMonthlyPayment()
+{
+  var loanAmt = document.getElementById('loan-amt').value;
+  var loanTerm = (document.getElementById('loan-term').value * 12);
+  var monthlyIntRate = ((document.getElementById('annual-int-rate').value / 100) / 12);
+
+
+  var monthlyPayment = (parseFloat(monthlyIntRate) * parseInt(loanAmt)) / (1 - ((1+parseFloat(monthlyIntRate))**(-parseInt(loanTerm))));
+  
+  console.log(((1+parseFloat(monthlyIntRate))**(-parseInt(loanTerm))));
+
+  if (isNaN(monthlyPayment) == false && monthlyPayment != Infinity)
+  {
+    document.getElementById('monthly-payment-result').innerHTML = "$" + parseFloat(monthlyPayment).toLocaleString('en-US');
+  }
+  else
+  {
+    document.getElementById('monthly-payment-result').innerHTML = "";
+  }
+}
+
