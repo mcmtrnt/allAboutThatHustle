@@ -429,4 +429,43 @@ main {
     text-align: center;
 }
 
+.calculateBtn {
+    color: white;
+    background-color: #84A8C1;
+    border-radius: 3px;
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+  }
+  
+  .calculateBtn:hover {
+    background: #161619;
+    cursor: pointer;
+  }
+
+  th {
+      font-size: 13px;
+      padding-right: 1rem;
+  }
+
+  td {
+      font-size: 12px;
+  }
+
+  tr:nth-child(even) {
+    background-color:#f7f4f4;
+  }
+
+  tr:hover {background-color: #D6EEEE;}
+
+
 /****END OF BLOG POST PAGES****/

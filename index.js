@@ -176,8 +176,6 @@ function calculateMonthlyPayment()
 
   var monthlyPayment = (parseFloat(monthlyIntRate) * parseInt(loanAmt)) / (1 - ((1+parseFloat(monthlyIntRate))**(-parseInt(loanTerm))));
   
-  console.log(((1+parseFloat(monthlyIntRate))**(-parseInt(loanTerm))));
-
   if (isNaN(monthlyPayment) == false && monthlyPayment != Infinity)
   {
     document.getElementById('monthly-payment-result').innerHTML = "$" + parseFloat(monthlyPayment).toLocaleString('en-US');
@@ -187,4 +185,75 @@ function calculateMonthlyPayment()
     document.getElementById('monthly-payment-result').innerHTML = "";
   }
 }
+
+function calculateAmortizationSchedule()
+{
+  var loanAmt = document.getElementById('loan-amt-calc').value;
+  var loanTerm = (document.getElementById('loan-term-calc').value * 12);
+  var intRate = ((document.getElementById('annual-int-rate-calc').value / 100) / 12);
+
+  var table = document.getElementById('amortizationTable');
+
+  var monthlyPayment = (parseFloat(intRate) * parseInt(loanAmt)) / (1 - ((1+parseFloat(intRate))**(-parseInt(loanTerm))));
+  
+  if (isNaN(monthlyPayment) == false && monthlyPayment != Infinity)
+  {
+    table.innerHTML = '';
+    var header = table.createTHead();
+    var row = header.insertRow(0);    
+    var periodHeader = row.insertCell(0);
+    var begBalHeader = row.insertCell(1);
+    var intHeader = row.insertCell(2);
+    var princHeader = row.insertCell(3);
+    var endBalHeader = row.insertCell(4);
+
+    periodHeader.innerHTML = "";
+    begBalHeader.innerHTML = "<b>Beginning Balance</b>";
+    intHeader.innerHTML = "<b>Interest Payment</b>";
+    princHeader.innerHTML = "<b>Principal Payment</b>";
+    endBalHeader.innerHTML = "<b>Remaining Balance</b>";
+
+    periodHeader.style = "font-size: 13px; padding-right: 1rem;";
+    begBalHeader.style = "font-size: 13px; padding-right: 1rem;";
+    intHeader.style = "font-size: 13px; padding-right: 1rem;";
+    princHeader.style = "font-size: 13px; padding-right: 1rem;";
+    endBalHeader.style = "font-size: 13px; padding-right: 1rem;";
+
+    for (i = 1; i < (loanTerm + 1); i++)
+    {
+      //Increment this
+      var row = table.insertRow(i);
+
+      // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+      var cellPeriod = row.insertCell(0);
+      var cellBegBal = row.insertCell(1);
+      var cellInt = row.insertCell(2);
+      var cellPrinc = row.insertCell(3);
+      var cellEndBal = row.insertCell(4);
+
+      intPmt = (loanAmt * intRate).toFixed(2);
+      princPmt = (monthlyPayment - intPmt).toFixed(2);
+      endBal = (loanAmt - princPmt).toFixed(2);
+
+      // Add some text to the new cells:
+      cellPeriod.innerHTML = i;
+      cellPeriod.style = "padding-right:1rem;";
+      cellBegBal.innerHTML = loanAmt;
+      cellInt.innerHTML = intPmt;
+      cellPrinc.innerHTML = princPmt;
+      cellEndBal.innerHTML = endBal;
+
+      if (i == (loanTerm)) cellEndBal.innerHTML = 0;
+
+      loanAmt = endBal;
+    }
+  }
+
+
+  
+
+
+
+}
+
 

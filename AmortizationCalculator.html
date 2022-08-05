@@ -77,6 +77,28 @@
                     <img src="/images/amortization-schedule.jpg" class="blog-post-image" alt="debt to income ratio calculator">
                     <br><br>
 
+                    <br>
+                    <h2 class="blog-post-h2">Amortization Calculator</h2>
+                    <form id="amortization-calculator">
+                        <div>
+                            <label class="front-end-dti-label" for="loan-amt-calc">Loan Amount:</label>
+                            <input id="loan-amt-calc" name="loan-amt-calc" type="number" onchange="calculateMonthlyPayment();">
+                        </div>
+                        <div>
+                            <label class="front-end-dti-label" for="loan-term-calc">Loan Term (Years):</label>
+                            <input id="loan-term-calc" name="loan-term-calc" type="number" onchange="calculateMonthlyPayment();">
+                        </div>
+                        <div>
+                            <label class="front-end-dti-label" for="annual-int-rate-calc">Annual Interest Rate:</label>
+                            <input id="annual-int-rate-calc" name="annual-int-rate-calc" type="number" onchange="calculateMonthlyPayment();">%
+                        </div>
+                        <button type="button" class="calculateBtn" onclick="calculateAmortizationSchedule();">Calculate</button>
+                    </form>
+                    <br><br>
+
+                    <table id="amortizationTable"></table>
+                    <br><br>
+
                     <h2 class="blog-post-h2">What is an Amortization Schedule?</h2>
                     <div class="blog-post-text">
                         When a loan is amortized each monthly payment is divided into principal and interest payments. The principal portion is applied towards the loan balance and
