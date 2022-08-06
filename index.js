@@ -248,10 +248,64 @@ function calculateAmortizationSchedule()
       loanAmt = endBal;
     }
   }
+}
 
+function calculateOperatingExpenseRatio()
+{
+  var monthlyRent = document.getElementById('monthly-rent').value;
+  var othIncome = document.getElementById('oth-income').value;
+  var vacancy = (document.getElementById('vacancy').value) / 100;
 
-  
+  var propTaxes = document.getElementById('prop-taxes').value;
+  var propInsurance = document.getElementById('prop-insurance').value;
+  var utility = document.getElementById('utility').value;
+  var maintenance = document.getElementById('maintenance').value;
+  var propManage = document.getElementById('prop-manage').value;
+  var othExp = document.getElementById('oth-exp').value;
 
+  var potentialGrossIncome = parseInt(monthlyRent) * 12;
+  var vacancyLoss = (potentialGrossIncome * parseFloat(vacancy)).toFixed(2);
+
+  var effectiveGrossIncome = potentialGrossIncome;
+  if (vacancyLoss > 0) effectiveGrossIncome -= vacancyLoss;
+  if (othIncome > 0) effectiveGrossIncome += (parseInt(othIncome) * 12);
+
+  if (isNaN(effectiveGrossIncome) == false && effectiveGrossIncome != Infinity)
+  {
+    document.getElementById('egi-result').innerHTML = "$" + parseFloat(effectiveGrossIncome).toFixed(2);
+  }
+  else
+  {
+    document.getElementById('egi-result').innerHTML = "";
+  }
+
+  var operatingExpenses = 0;
+  if (parseInt(propTaxes) > 0) operatingExpenses += parseInt(propTaxes);
+  if (parseInt(propInsurance) > 0) operatingExpenses += parseInt(propInsurance);
+  if (parseInt(maintenance) > 0) operatingExpenses += parseInt(maintenance);
+  if (parseInt(propManage) > 0) operatingExpenses += parseInt(propManage);
+  if (parseInt(othExp) > 0) operatingExpenses += parseInt(othExp);
+  if (parseInt(utility) > 0) operatingExpenses += parseInt(utility);
+
+  if (isNaN(operatingExpenses) == false && operatingExpenses != Infinity)
+  {
+    document.getElementById('total-exp-result').innerHTML = "$" + parseFloat(operatingExpenses).toFixed(2);
+  }
+  else
+  {
+    document.getElementById('total-exp-result').innerHTML = "";
+  }
+
+  var operatingExpenseRatio = operatingExpenses / effectiveGrossIncome;
+
+  if (isNaN(operatingExpenseRatio) == false && operatingExpenseRatio != Infinity)
+  {
+    document.getElementById('opex-result').innerHTML = parseFloat(operatingExpenseRatio * 100).toFixed(2) + "%";
+  }
+  else
+  {
+    document.getElementById('opex-result').innerHTML = "";
+  }
 
 
 }
