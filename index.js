@@ -306,7 +306,27 @@ function calculateOperatingExpenseRatio()
   {
     document.getElementById('opex-result').innerHTML = "";
   }
+}
 
+function calculateGrossRentMultiplier()
+{
+  var purchasePrice = document.getElementById('purchase-price').value;
+  var monthlyRent = document.getElementById('monthly-rent').value;
+  var othIncome = document.getElementById('oth-income').value;
+
+  var grossIncome = 0;
+  if (parseInt(monthlyRent) > 0) grossIncome += parseInt(monthlyRent * 12);
+  if (parseInt(othIncome) > 0) grossIncome += parseInt(othIncome * 12);
+  var grm = parseInt(purchasePrice) / grossIncome;
+
+  if (isNaN(grm) == false && grm != Infinity)
+  {
+    document.getElementById('grm-result').innerHTML = parseFloat(grm).toFixed(2);
+  }
+  else
+  {
+    document.getElementById('grm-result').innerHTML = "";
+  }
 
 }
 

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="description" content="Calculate the gross rent multiplier for an investment property quickly and easily with our free online GRM calculator.">
+    <meta name="keywords" content="Gross Rent Multiplier Calculator, GRM Calculator, How do I calculate gross rent multiplier, what is gross rent multiplier">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Gross Rent Multiplier Calculator | All About That Hustle</title>
+        <link rel="icon" href="/images/favicon.jpg">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+     
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-231789926-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-231789926-1');
+        </script>
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1598746267972098"
+        crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+        <link rel="stylesheet" href="/index.css">
+        <script src="/index.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div id="overlay">
+            <div id="text">Sending...</div>
+        </div>
+
+        <div id="signup-modal" class="modal2">
+            <div class="modal-content2">
+                <span class="close2" onclick="closeSignupModal()">&times;</span> 
+                <div class="modal-header2">Sign Up For Our Newsletter!</div>
+                <br>
+                <div>Get our latest content and become a real estate expert</div>
+                <div id="signup-error" class="signup-error">Invalid Email</div>
+                <input id='email-input' class="email-input" type="text" placeholder="Enter Your Email">
+                <div class="newsletter" onclick="signup()">SIGN UP</div>
+            </div>
+        </div>
+
+        <header>
+            <div class="top-line"></div>
+            <div class="myNav">
+                <a href="/" class="blog-title">All About That Hustle</a>
+                <nav>
+                    <ul>
+                        <li>Home</li>
+                        <li>Real Estate Basics</li>
+                        <li>Analyzing Investments</li>
+                        <li>Additional Resources</li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="row">
+                <div class="col-md-8">
+                    
+                    <div class="blog-post-label">REAL ESTATE INVESTMENT CALCULATORS</div>
+                    <h1 class="blog-post-title">Gross Rent Multiplier</h1>
+                    <img src="/images/grossrentmultipliercalculator.jpeg" class="blog-post-image" alt="Gross Rent Multiplier Calculator">
+                    <br><br>
+
+                    <h2 class="blog-post-h2">Gross Rent Multiplier Calculator</h2>
+                    <form id="front-end-dti-calculator">
+                        <div>
+                            <label class="front-end-dti-label" for="purchase-price">Purchase Price:</label>
+                            <input id="purchase-price" name="purchase-price" type="number" onchange="calculateGrossRentMultiplier();">
+                        </div>
+                        <div>
+                            <label class="front-end-dti-label" for="monthly-rent">Monthly Rental Income:</label>
+                            <input id="monthly-rent" name="monthly-rent" type="number" onchange="calculateGrossRentMultiplier();">
+                        </div>
+                        <div>
+                            <label class="front-end-dti-label" for="oth-income">Other Monthly Income:</label>
+                            <input id="oth-income" name="oth-income" type="number" onchange="calculateGrossRentMultiplier();">
+                        </div> 
+                    </form>
+                    <div class="front-end-dti">Gross Rent Multiplier: </div>
+                    <a href="javascript: void(0);" id="grm-result" class="calculator-result"></a>
+                    <br>
+
+                    <br><br>
+                    <h2 class="blog-post-h2">What is Gross Rent Multiplier?</h2>
+                    <div class="blog-post-text">
+                        The gross rent multiplier (GRM) measures how many years it would take for a property to pay for itself using only the rental income it generates.
+                        The GRM is an excellent metric for quickly comparing the potential profitability of two or more properties. The gross rent multiplier is easy to calculate 
+                        using online tools like our free GRM calculator above, or you can calculate it manually using the formula shown below.
+                    </div>
+                    <br>
+                    <h2 class="blog-post-h2">Gross Rent Multiplier Formula</h2>
+                    <div class="blog-post-text">
+                        <div class="blog-post-comment">
+                            Gross Rent Multiplier = Purchase price / Gross Annual Income
+                        </div>
+                    </div>
+                    <br>
+                    <h2 class="blog-post-h2">How do I Calculate the Gross Rent Multiplier?</h2>
+                    <div class="blog-post-text">
+                        To calculate the gross rent multiplier, just divide the gross annual income by the purchase price. The gross annual income includes all revenue generated by
+                        the property such as rental or lease income, parking permit fees, advertising revenue, or other income streams.
+                        <br><br>
+                        For example, let's assume you are analyzing an investment property with $4,000/month in rental income and $200/month revenue from parking pass fees, and the
+                        property is listed for sale at $875,000. Using these numbers we could calculate the gross rent multiplier as $875,000 / (($4,000 * 12) + ($200 * 12)) = 17.36.
+                        This means it would take 17.36 years for the property to pay for itself.
+                        <br><br>
+                        While the GRM can be useful on its own, it is most useful when comparing properties side by side. It offers investors a quick, objective evaluation of
+                        properties that may otherwise be difficult to compare. For instance, a small duplex and a large apartment complex have drastically different purchase prices
+                        and gross annual revenues, but both can quickly be converted to GRM and compared to see which property may be a better investment choice. 
+                        <br><br>
+                        A valuable word of advice when comparing properties is to make sure the properties you are comparing are in the same general location. The gross rent 
+                        multiplier can vary widely between geographical regions. Higher-priced locations such as California or New York will naturally have higher GRMs than inexpensive
+                        locations. Using the gross rent multiplier to compare properties in the city with properties in the country can produce unreliable results.
+                    </div>
+                    <br>
+                    <h2 class="blog-post-h2">What is a Good Gross Rent Multiplier?</h2>
+                    <div class="blog-post-text">
+                        Generally speaking, the lower the GRM is, the better. A high GRM may mean the property is overpriced. The gross rent multiplier indicates how many years it would take the property to pay for itself so a 
+                        low GRM means the property would pay for itself quickly. However, it's important to trust your gut and use good common sense when evaluating a property. 
+                        If you find an investment property with an unusually low GRM it may be a red flag that you are looking at a problem property. Perhaps there is something 
+                        wrong with the property that isn't easily seen at first glance. For example, there may be a high tenant turnover ratio, or perhaps the building is 
+                        getting old and structural issues will soon become an issue. This is why it is always a good idea to use multiple investment measures rather than relying 
+                        on a single calculation as the backbone of your investment decisions.
+                    </div>
+                    
+                    <div class="related-posts">Related Posts</div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="/DirectCapitalizationMethod.html">
+                                <img src="/images/directcapitalizationmethod.jpg" class="blog-post-image" alt="Direct cap method">
+                                <div class="related-posts-article-title">Direct Capitalization Method - Income Approach to Valuation</div>
+                            </a>
+                        </div>
+                    </div>
+                    <br><br>
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="most-popular-header">MOST POPULAR</div>
+
+                    <div class="row most-popular">
+                        <div class="col-md-5">
+                            <a href="/InvestingInSingleFamilyHomes.html"><img class="article-image" src="/images/singlefamilyhome.jpg" alt="Should I buy a single family home as a rental?"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <a href="/InvestingInSingleFamilyHomes.html"><div class="most-popular-title">Investing in Single Family Homes - Pros and Cons</div></a>
+                        </div>
+                    </div>
+
+                    <div class="row most-popular">
+                        <div class="col-md-5">
+                            <a href="/ProblemsWithOldHouses.html"><img class="article-image" src="/images/old house.jpg" alt="Should I buy an old house as an investment?"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <a href="/ProblemsWithOldHouses.html"><div class="most-popular-title">Problems with Old Houses</div></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>               
+
+        <footer class="blog-post-footer">
+            <a href="/">All About That Hustle</a>
+        </footer>
+    </body>
+</html>
