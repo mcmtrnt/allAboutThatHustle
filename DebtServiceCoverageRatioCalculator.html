@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="description" content="Calculate your debt service coverage ratio ratio quickly and easily with our free online DSCR calculator.">
+    <meta name="keywords" content="Debt Service Coverage Ratio Calculator, Debt Service Coverage Ratio, DSCR, DSCR Calculator, dscr calculation, dscr ratio, debt coverage ratio, debt service coverage ratio formula">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <title>Debt Service Coverage Ratio Calculator (DSCR) | All About That Hustle</title>
+        <link rel="icon" href="/images/favicon.jpg">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+     
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-231789926-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-231789926-1');
+        </script>
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1598746267972098"
+        crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+        <link rel="stylesheet" href="/index.css">
+        <script src="/index.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [{
+                "@type": "Question",
+                "name": "What is debt service coverage ratio?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "<p>The debt service coverage ratio is used to measure if an investment will produce enough cash flow to make its debt payments. It's commonly used by lenders to determine whether or not an investor's income-producing commercial property will qualify for a loan.</p>"
+                }
+              }, {
+                "@type": "Question",
+                "name": "How do I calculate debt service coverage ratio?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "<p>The debt service coverage ratio (DSCR) can be calculated using the following formula:
+                    <br><br>
+                    DSCR = NOI / Debt Service</p>"
+                }, 
+                {
+                "@type": "Question",
+                "name": "What is a good debt service coverage ratio?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "<p>A debt service coverage ratio greater than 1 means the property will generate enough revenue to pay off its debt. While a ratio less than 1 means the property will not generate enough revenue to pay the monthly debt service.</p>"
+                }
+              }
+              }]
+            }
+            </script>
+    </head>
+    
+    <body>
+        <div id="overlay">
+            <div id="text">Sending...</div>
+        </div>
+
+        <div id="signup-modal" class="modal2">
+            <div class="modal-content2">
+                <span class="close2" onclick="closeSignupModal()">&times;</span> 
+                <div class="modal-header2">Sign Up For Our Newsletter!</div>
+                <br>
+                <div>Get our latest content and become a real estate expert</div>
+                <div id="signup-error" class="signup-error">Invalid Email</div>
+                <input id='email-input' class="email-input" type="text" placeholder="Enter Your Email">
+                <div class="newsletter" onclick="signup()">SIGN UP</div>
+            </div>
+        </div>
+
+        <header>
+            <div class="top-line"></div>
+            <div class="myNav">
+                <a href="/" class="blog-title">All About That Hustle</a>
+                <nav>
+                    <ul>
+                        <li>Home</li>
+                        <li>Real Estate Basics</li>
+                        <li>Analyzing Investments</li>
+                        <li>Additional Resources</li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="row">
+                <div class="col-md-8">
+                    
+                    <div class="blog-post-label">REAL ESTATE INVESTMENT CALCULATORS</div>
+                    <h1 class="blog-post-title">Debt Service Coverage Ratio</h1>
+                    <img src="/images/debtservicecoverageratiocalculator.jpeg" class="blog-post-image" alt="Debt Service Coverage Ratio Calculator">
+                    <br><br>
+
+                    <h2 class="blog-post-h2">Debt Service Coverage Ratio Calculator (DSCR)</h2>
+                    <form id="front-end-dti-calculator">
+                        <div>
+                            <label class="front-end-dti-label" for="noi">Net Operating Income:</label>
+                            <input id="noi" name="noi" type="number" onchange="calculateDebtServiceCoverageRatio();">
+                        </div>
+                        <div>
+                            <label class="front-end-dti-label" for="debt-service">Debt Service:</label>
+                            <input id="debt-service" name="debt-service" type="number" onchange="calculateDebtServiceCoverageRatio();">
+                        </div>
+                    </form>
+                    <div class="front-end-dti">Debt Service Coverage Ratio: </div>
+                    <a href="javascript: void(0);" id="dscr-result" class="calculator-result"></a>
+                    <br>
+
+                    <br><br>
+                    <h2 class="blog-post-h2">What is Debt Service Coverage Ratio?</h2>
+                    <div class="blog-post-text">
+                        The debt service coverage ratio is used to measure if an investment will produce enough cash flow to make its debt payments.
+                        It's commonly used by lenders to determine whether or not an income-producing property will qualify for a loan. The DSCR is used in the commercial real estate
+                        industry more often than in the residential market.
+                        Lenders use the debt service ratio to see if the commercial property in question will generate sufficient revenue to pay off the loan.
+                        If it will, lenders are happy to loan money, but if it won't it can be very hard to obtain financing.
+                        <br><br>
+                        A debt service coverage ratio greater than 1 means the property will generate enough revenue to pay off its debt while a ratio less than 1
+                        means the property will not generate enough revenue to pay the monthly debt service. In this case, additional money would be needed every month to pay the amount due.
+                        Each lender will have their own minimum cutoffs but typically a DSCR of 1.25 - 1.5 is the minimum acceptable value that will still qualify you for a loan.
+                        A number greater than 1.5 is usually treated as preferential and in some cases can help you obtain more favorable financing or a lower interest rate.
+                        <br><br>
+                        DSCR is not only a useful metric for mortgage lenders, real estate investors also use the debt service coverage ratio to decide whether a property will produce
+                        an adequate return on investment. Investors can use the debt service coverage ratio formula to compare properties and quickly ascertain whether an available property
+                        is likely to make its payments and qualify for financing.
+                        <br><br>
+                        While the debt service coverage ratio is a valuable tool, real estate investors should not rely solely on this metric to evaluate an investment opportunity. There are
+                        many other useful metrics that give valuable insights and when these metrics are used together an investor gets a much clearer picture of the overall situation and
+                        can make a more informed decision.
+                    </div>
+
+                    <h2 class="blog-post-h2">How do I calculate Debt Service Coverage Ratio?</h2>
+                    <div class="blog-post-text">
+                        The debt service coverage ratio (DSCR) can be calculated using the following formula:
+                        <br><br>
+                        <div class="blog-post-comment">
+                            DSCR = NOI / Debt Service
+                        </div>
+                        <br>
+                        Debt service is the mortgage payment for the property.
+                        <br>
+                        NOI is the net operating income for the property
+                        <br><br>
+                        For example, if you wanted to get a loan with a $2,000/month mortgage payment the property you are financing would need to have a monthly NOI of at least $2,500 to qualify.
+                        $2,500 / $2,000 = 1.25
+                        <br><br>
+                        With a little reverse math, you can also use the debt service coverage ratio formula to determine how large of a loan you can qualify for.
+                        <br><br>
+                        <div class="blog-post-comment">
+                            Debt Service = NOI / DSCR
+                        </div>
+                        <br>
+                        For example, if you were trying to obtain financing for a commercial property with a net operating income of $2,500/month and you know your lender requires a
+                        DSCR of at least 1.25, you could calculate how large of a payment you could qualify for. $2,500 / 1.25 = $2,000/month.
+                    </div>
+
+                    
+                    <div class="related-posts">Related Posts</div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a href="/BackEndDTICalculator.html">
+                                <img src="/images/backenddticalculator.jpg" class="blog-post-image" alt="Back-End DTI Calculator">
+                                <div class="related-posts-article-title">Back-End Debt-To-Income Ratio Calculator</div>
+                            </a>
+                        </div>
+                    </div>
+                    <br><br>
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="most-popular-header">MOST POPULAR</div>
+
+                    <div class="row most-popular">
+                        <div class="col-md-5">
+                            <a href="/AmortizationCalculator.html"><img class="article-image" src="/images/amortization-schedule.jpg" alt="Amortization Schedule Calculator"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <a href="/AmortizationCalculator.html"><div class="most-popular-title">Amortization Loan Payment Calculator</div></a>
+                        </div>
+                    </div>
+
+                    <div class="row most-popular">
+                        <div class="col-md-5">
+                            <a href="/DirectCapitalizationMethod.html"><img class="article-image" src="/images/directcapitalizationmethod.jpg" alt="Direct capitalization method"></a>
+                        </div>
+                        <div class="col-md-7">
+                            <a href="/DirectCapitalizationMethod.html"><div class="most-popular-title">Direct Capitalization Method: Income Approach to Valuation</div></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>               
+
+        <footer class="blog-post-footer">
+            <a href="/">All About That Hustle</a>
+        </footer>
+    </body>
+</html>

@@ -327,6 +327,23 @@ function calculateGrossRentMultiplier()
   {
     document.getElementById('grm-result').innerHTML = "";
   }
+}
+
+function calculateDebtServiceCoverageRatio()
+{
+  var noi = document.getElementById('noi').value;
+  var debtService = document.getElementById('debt-service').value;
+
+  var dscr = parseInt(noi) / parseInt(debtService);
+
+  if (isNaN(dscr) == false && dscr != Infinity)
+  {
+    document.getElementById('dscr-result').innerHTML = parseFloat(dscr).toFixed(2);
+  }
+  else
+  {
+    document.getElementById('dscr-result').innerHTML = "";
+  }
 
 }
 
